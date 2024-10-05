@@ -1,0 +1,18 @@
+services:
+    api:
+        build: ./api
+        image: audio-rag/api:latest
+        container_name: audio-rag-api
+        restart: unless-stopped
+        command: uvicorn main:app --host 0.0.0.0 --port 8000 --log-level warning
+        env_file:
+            - .env.docker
+        ports:
+            - 80:8000
+        deploy:
+            resources:
+                reservations:
+                    devices:
+                        - driver: nvidia
+                          count: 1
+                          capabilities: [gpu]

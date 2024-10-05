@@ -1,0 +1,13 @@
+fastapi
+faster-whisper
+langchain
+langchain-chroma
+langchain-community
+langchain-huggingface
+langchain-openai
+python-dotenv
+python-multipart
+torch
+torchvision
+torchaudio
+uvicorn
